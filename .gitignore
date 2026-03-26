@@ -1,0 +1,89 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Models / checkpoints
+# =========================
+models/*.pt
+models/*.pth
+models/*.ckpt
+
+# =========================
+# Outputs
+# =========================
+outputs/
+runs/
+results/
+
+# =========================
+# Evaluation outputs
+# =========================
+evaluation/*.txt
+evaluation/*.json
+
+# =========================
+# UCSD Ped2 Dataset (IMPORTANT)
+# =========================
+
+# Ignore actual image frames/videos
+UCSDped2/Test/*/*.tif
+UCSDped2/Test/*/*.png
+UCSDped2/Test/*/*.jpg
+
+UCSDped2/Train/*/*.tif
+UCSDped2/Train/*/*.png
+UCSDped2/Train/*/*.jpg
+
+# Keep folder structure (VERY IMPORTANT)
+!UCSDped2/
+!UCSDped2/Test/
+!UCSDped2/Train/
+!UCSDped2/*/
+
+# Keep ground truth (small & useful)
+!UCSDped2/Test/*_gt/
+
+# =========================
+# Large data files
+# =========================
+data/*.csv
+data/*.h5
+data/*.npz
+data/*.npy
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Cache
+# =========================
+.cache/
+pytest_cache/
