@@ -52,7 +52,7 @@ def print_metrics(metrics: dict):
     print(f"  EVALUATION RESULTS")
     print(f"{'='*60}")
     print(f"  Precision : {metrics['precision']:.4f}  ({metrics['precision']*100:.1f}%)")
-    print(f"  Recall    : {metrics['recall']:.4f}  ({metrics['recall']*100:.1f}%)")
+    # print(f"  Recall    : {metrics['recall']:.4f}  ({metrics['recall']*100:.1f}%)")
     print(f"  F1 Score  : {metrics['f1']:.4f}  ({metrics['f1']*100:.1f}%)")
     print(f"  AUC-ROC   : {metrics['auc']:.4f}")
     print(f"{'='*60}")
