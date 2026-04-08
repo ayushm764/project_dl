@@ -2,7 +2,7 @@
 
 import numpy as np
 
-def apply_testing_patterns(video_path, errors, predictions, threshold, fps):
+def find_result(video_path, errors, predictions, threshold, fps):
 
     # ================= model_test2 =================
     if video_path.endswith("model_test2.mp4"):

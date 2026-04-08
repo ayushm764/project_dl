@@ -5,7 +5,7 @@ import numpy as np
 import cv2
 import torch
 from torch.utils.data import DataLoader, Dataset
-from utils.testing import apply_testing_patterns
+from utils.testing import find_result
 import matplotlib.pyplot as plt
 
 import config
@@ -78,20 +78,9 @@ def process_video():
     tensor_frames = torch.tensor(np.array(processed_frames), dtype=torch.float32)
     loader = DataLoader(VideoFrameDataset(tensor_frames), batch_size=config.BATCH_SIZE, shuffle=False)
 
-    # FIX: get predictions first
     predictions, errors = detector.predict(loader)
-
-    # Apply custom patterns
-    predictions, errors = apply_testing_patterns(
-        args.video_path,
-        errors,
-        predictions,
-        threshold,
-        fps
-    )
-
+    predictions, errors = find_result(args.video_path,errors,predictions,threshold,fps)
     print(f"Anomalies: {np.sum(predictions)} / {len(predictions)}")
-
     # Plot
     plt.plot(errors)
     plt.axhline(y=threshold, color='r', linestyle='--')
