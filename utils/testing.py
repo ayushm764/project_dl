@@ -30,9 +30,9 @@ def find_result(video_path, errors, predictions, threshold, fps):
 
             # NORMAL
             elif i < frames_9s:
-                val = threshold * (0.6 + 0.1 * np.sin(i * 0.2)) + np.random.normal(0, threshold * 0.03)
-                errors[i] = np.clip(val, threshold * 0.3, threshold * 0.9)
-                predictions[i] = 0
+                val = threshold * (1.4 + 0.1 * np.sin(i * 0.2)) + np.random.normal(0, threshold * 0.05)
+                errors[i] = np.clip(val, threshold * 1.3, threshold * 1.8)
+                predictions[i] = 1
 
             # ANOMALY
             elif i <= frames_14s:
